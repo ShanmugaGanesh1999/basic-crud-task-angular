@@ -1,0 +1,46 @@
+<mat-card class="example-card" appearance="outlined">
+    <mat-card-header class="card-header">
+        <mat-card-title>ADD TASK</mat-card-title>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput [formControl]="title" (blur)="updateErrorMessage()" required />
+            @if (titleError) {
+            <mat-error>You must enter a title</mat-error>
+            }
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input matInput [formControl]="description" (blur)="updateErrorMessage()" required />
+            @if (descriptionError) {
+            <mat-error>You must enter a description</mat-error>
+            }
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Deadline</mat-label>
+            <input matInput id="mydeadline" [matDatepicker]="picker" [(ngModel)]="deadline"
+                (blur)="updateErrorMessage()" required />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (deadlineError) {
+            <mat-error>You must enter a deadline</mat-error>
+            }
+        </mat-form-field>
+        <br>
+        <mat-label>Priority</mat-label>
+        <mat-radio-group [formControl]="priority">
+            <mat-radio-button value="low">Low</mat-radio-button>
+            <mat-radio-button value="medium">Medium</mat-radio-button>
+            <mat-radio-button value="high">High</mat-radio-button>
+        </mat-radio-group>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="cancel()">Cancel</button>
+        <button mat-button (click)="submit()">{{submitTxt}}</button>
+    </mat-card-actions>
+</mat-card>

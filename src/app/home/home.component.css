@@ -1,0 +1,23 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+table {
+    width: 100%;
+}
+
+.actnBtn {
+    padding-top: 1em;
+}
+
+.low {
+    color: green;
+}
+
+.medium {
+    color: yellowgreen;
+}
+
+.high {
+    color: red;
+}

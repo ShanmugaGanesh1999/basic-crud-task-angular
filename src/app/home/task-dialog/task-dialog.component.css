@@ -1,0 +1,15 @@
+mat-form-field {
+    margin-bottom: 10px;
+}
+
+.mat-mdc-radio-button~.mat-mdc-radio-button {
+    margin-left: 16px;
+}
+
+mat-card-actions {
+    float: right;
+}
+
+mat-form-field {
+    margin-right: 12px;
+}
